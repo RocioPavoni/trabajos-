@@ -1,0 +1,24 @@
+//Realizar un programa que cada dos segundos prenda o apague un LED.
+//codigo 
+long int timer = 2000;
+unsigned long tiempo1 = 0;
+unsigned long tiempo2 = 0;
+int ledPin1 = 3;
+ 
+void setup() {
+Serial.begin(9600);
+pinMode(ledPin1, OUTPUT);
+ 
+}
+ 
+void loop() {
+ 
+tiempo1 = millis();
+if((tiempo1 - tiempo2)>2000){
+digitalWrite (ledPin1, HIGH);
+if((tiempo1 - tiempo2)>4000){
+digitalWrite(ledPin1, LOW);
+tiempo2 = tiempo1;
+}
+}
+}
