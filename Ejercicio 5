@@ -1,0 +1,79 @@
+//Realizar el ejercicio del semáforo explicado en la primer actividad utilizando timers.
+//codigo 
+int ledRojo = 4;
+
+int ledAmarillo = 2;
+
+int ledVerde = 3;
+
+ 
+
+unsigned long tiempo1 = 0;
+
+unsigned long tiempo2 = 0;
+
+ 
+
+ 
+
+ 
+
+void setup()
+
+{
+
+Serial.begin(9600);
+
+pinMode(ledRojo, OUTPUT);
+
+pinMode(ledAmarillo, OUTPUT);
+
+pinMode(ledVerde, OUTPUT);
+
+}
+
+ 
+
+void loop()
+
+{
+
+tiempo1 = millis();
+
+if((tiempo1-tiempo2)>2000){
+
+digitalWrite(ledRojo, HIGH);
+
+digitalWrite(ledAmarillo, LOW);
+
+digitalWrite(ledVerde, LOW);
+
+ 
+
+if((tiempo1-tiempo2)>3000){
+
+digitalWrite(ledRojo, LOW);
+
+digitalWrite(ledAmarillo, HIGH);
+
+digitalWrite(ledVerde, LOW);
+
+if((tiempo1 - tiempo2)>4000){
+
+digitalWrite(ledRojo, LOW);
+
+digitalWrite(ledAmarillo, LOW);
+
+digitalWrite(ledVerde, HIGH);
+
+tiempo2 = tiempo1;
+
+}
+
+}
+
+}
+
+ 
+
+}
