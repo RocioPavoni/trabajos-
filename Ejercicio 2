@@ -1,0 +1,25 @@
+//Realizar un programa que muestre cada  2 segundos el mensaje "Timer activado."
+//codigo 
+long int timer = 2000;
+unsigned long tiempo1 = 0;
+unsigned long tiempo2 = 0;
+unsigned long tiempoSegundos = 0;
+ 
+void setup() {
+Serial.begin(9600);
+tiempo1 = millis();
+ 
+}
+ 
+void loop() {
+ 
+tiempo2 = millis();
+if(tiempo2 > (tiempo1+2000)){
+tiempo1 = millis();
+tiempoSegundos = tiempo1/1000;
+Serial.println("TIMER ACTIVADO");
+
+}
+
+ 
+}
