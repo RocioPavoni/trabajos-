@@ -1,0 +1,63 @@
+//Realizar un programa donde se conecten dos LEDs, el uno parpadee cada 2 segundos y el otro cada 1 segundo.
+//codigo 
+ong int timer = 2000;
+
+unsigned long tiempo1 = 0;
+
+unsigned long tiempo2 = 0;
+
+int ledPin1 = 3;
+
+int ledPin2 = 4;
+
+ 
+
+void setup() {
+
+Serial.begin(9600);
+
+pinMode(ledPin1, OUTPUT);
+
+pinMode(ledPin2, OUTPUT);
+
+ 
+
+}
+
+ 
+
+void loop() {
+
+ 
+
+tiempo1 = millis();
+
+if((tiempo1 - tiempo2)>2000){
+
+digitalWrite (ledPin1, HIGH);
+
+if((tiempo1 - tiempo2)>4000){
+
+digitalWrite(ledPin1, LOW);
+
+tiempo2 = tiempo1;
+
+}
+
+}
+
+if((tiempo1 - tiempo2)>1000){
+
+digitalWrite (ledPin2, HIGH);
+
+if((tiempo1 - tiempo2)>2000){
+
+digitalWrite(ledPin2, LOW);
+
+tiempo2 = tiempo1;
+
+}
+
+}
+
+}
